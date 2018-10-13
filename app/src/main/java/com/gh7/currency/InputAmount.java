@@ -15,16 +15,20 @@ import java.math.BigDecimal;
 public class InputAmount extends Activity {
 
 
-    public BigDecimal price = new BigDecimal("50.12");
+    public BigDecimal price;
     public BigDecimal paid = new BigDecimal("0.00");
-    public BigDecimal remain = price;
+    public BigDecimal remain;
     MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mp = MediaPlayer.create(this, R.raw.bell);
         setContentView(R.layout.activity_input_amount);
+
+        String priceValue = getIntent().getStringExtra("PRICE");
+        remain = price = new BigDecimal(priceValue);
+
+        mp = MediaPlayer.create(this, R.raw.bell);
 
         ((TextView)findViewById(R.id.price)).setText(price.toString());
         ((TextView)findViewById(R.id.paid)).setText(paid.toString());
