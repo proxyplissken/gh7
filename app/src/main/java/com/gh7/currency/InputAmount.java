@@ -18,6 +18,7 @@ public class InputAmount extends Activity {
     public BigDecimal price;
     public BigDecimal paid = new BigDecimal("0.00");
     public BigDecimal remain;
+    public boolean binged = false;
     MediaPlayer mp;
 
     @Override
@@ -275,9 +276,12 @@ public class InputAmount extends Activity {
         if (remain.floatValue() <= 0){
             thumb.setRotation(0f);
             thumbback.setBackgroundColor(Color.GREEN);
-            mp.start();
-
+            if(!binged) {
+                binged = true;
+                mp.start();
+            }
         } else {
+            binged = false;
             thumb.setRotation(-180f * (remain.floatValue() / price.floatValue()));
             thumbback.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
         }

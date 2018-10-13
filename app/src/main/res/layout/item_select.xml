@@ -49,7 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/itemtwoimage"
-                    android:src="@drawable/milkone"
+                    android:src="@drawable/bike"
                     android:scaleType="centerCrop"/>
 
 
@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="$5.75"
+                    android:text="$86.00"
                     android:textSize="30dp"
                     />
 
@@ -73,7 +73,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/milkone"
+                    android:src="@drawable/steak"
                     android:scaleType="centerCrop"/>
 
 
@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:gravity="center"
-                    android:text="$3.75"
+                    android:text="$8.45"
                     android:textSize="30dp"
 
                     />

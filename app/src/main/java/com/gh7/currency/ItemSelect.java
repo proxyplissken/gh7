@@ -26,11 +26,17 @@ public class ItemSelect extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), InputAmount.class);
-                intent.putExtra("PRICE", "5.75");
+                intent.putExtra("PRICE", "86.00");
                 startActivity(intent);
             }
         });
-
-
+        findViewById(R.id.itemthree).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), InputAmount.class);
+                intent.putExtra("PRICE", "8.45");
+                startActivity(intent);
+            }
+        });
     }
 }
