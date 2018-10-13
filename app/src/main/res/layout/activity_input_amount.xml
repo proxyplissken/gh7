@@ -29,14 +29,13 @@
                     android:weightSum="1">
 
                     <TextView
+                        android:id="@+id/price"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:gravity="right"
                         android:paddingRight="10dp"
-                        android:text="48.12"
-                        android:id="@+id/price"
-                        />
+                        android:text="48.12" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -51,20 +50,19 @@
                     android:weightSum="1">
 
                     <TextView
+                        android:id="@+id/paid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:gravity="right"
                         android:paddingRight="10dp"
-                        android:text="0.00"
-                        android:id="@+id/paid"/>
+                        android:text="0.00" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
-                        android:text="Paid"
-                        />
+                        android:text="Paid" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -73,19 +71,18 @@
                     android:weightSum="1">
 
                     <TextView
+                        android:id="@+id/remain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:gravity="right"
-                        android:paddingRight="10dp"
-                        android:id="@+id/remain"/>
+                        android:paddingRight="10dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
-                        android:text="Remaining"
-                        />
+                        android:text="Remaining" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -101,85 +98,122 @@
 
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:paddingLeft="10px"
             android:weightSum="1">
 
-            <Button
-                android:id="@+id/hundreddollar"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:text="$100" />
+                android:layout_weight=".4"
+                android:orientation="vertical"
+                android:weightSum="1">
 
-            <Button
-                android:id="@+id/fiftydollar"
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/hundreddollar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:text="$100" />
+
+                    <Button
+                        android:id="@+id/fiftydollar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:text="$50" />
+
+                    <Button
+                        android:id="@+id/twentydollar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:text="$20" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/tendollar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:text="$10" />
+
+                    <Button
+                        android:id="@+id/fivedollar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:text="$5" />
+
+                    <Button
+                        android:id="@+id/onedollar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:text="$1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingLeft="30px"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:text="$50" />
+                android:layout_weight=".6"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/twentydollar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:text="$20" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
-            <Button
-                android:id="@+id/tendollar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:text="$10" />
+                    <Button
+                        android:id="@+id/quarter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:text="25&#162;" />
 
-            <Button
-                android:id="@+id/fivedollar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:text="$5" />
-        </LinearLayout>
+                    <Button
+                        android:id="@+id/dime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:text="10&#162;" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="1">
+                </LinearLayout>
 
-            <Button
-                android:id="@+id/onedollar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:text="$1" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:text="25&#162;" />
+                    <Button
+                        android:id="@+id/nickel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:text="5&#162;" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:text="10&#162;" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:text="5&#162;" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:text="1&#162;" />
+                    <Button
+                        android:id="@+id/penny"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:text="1&#162;" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
 
         <ScrollView
@@ -187,11 +221,24 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/money"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:weightSum="1"></LinearLayout>
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:id="@+id/bills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".4"
+                    android:orientation="vertical"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/change"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:orientation="vertical"></LinearLayout>
+            </LinearLayout>
         </ScrollView>
     </LinearLayout>
 

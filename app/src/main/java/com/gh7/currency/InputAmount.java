@@ -25,7 +25,8 @@ public class InputAmount extends Activity {
         ((TextView)findViewById(R.id.paid)).setText(paid.toString());
         ((TextView)findViewById(R.id.remain)).setText(remain.toString());
 
-        final LinearLayout money = findViewById(R.id.money);
+        final LinearLayout bills = findViewById(R.id.bills);
+        final LinearLayout change = findViewById(R.id.change);
 
         findViewById(R.id.hundreddollar).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,14 +37,14 @@ public class InputAmount extends Activity {
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        money.removeView(imageView);
-                        updateTotals(new BigDecimal(-100));
+                        bills.removeView(imageView);
+                        updateTotals(new BigDecimal("-100"));
                     }
                 });
 
                 imageView.setImageResource(R.drawable.hundred);
                 imageView.setLayoutParams(new LinearLayout.LayoutParams(380,175));
-                money.addView(imageView);
+                bills.addView(imageView);
                 updateTotals(new BigDecimal("100"));
             }
         });
@@ -56,14 +57,14 @@ public class InputAmount extends Activity {
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        money.removeView(imageView);
-                        updateTotals(new BigDecimal(-50));
+                        bills.removeView(imageView);
+                        updateTotals(new BigDecimal("-50"));
                     }
                 });
 
                 imageView.setImageResource(R.drawable.fifty);
                 imageView.setLayoutParams(new LinearLayout.LayoutParams(380,175));
-                money.addView(imageView);
+                bills.addView(imageView);
                 updateTotals(new BigDecimal("50"));
 
             }
@@ -78,14 +79,14 @@ public class InputAmount extends Activity {
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        money.removeView(imageView);
-                        updateTotals(new BigDecimal(-20));
+                        bills.removeView(imageView);
+                        updateTotals(new BigDecimal("-20"));
                     }
                 });
 
                 imageView.setImageResource(R.drawable.twenty);
                 imageView.setLayoutParams(new LinearLayout.LayoutParams(380,175));
-                money.addView(imageView);
+                bills.addView(imageView);
                 updateTotals(new BigDecimal("20"));
 
             }
@@ -99,13 +100,13 @@ public class InputAmount extends Activity {
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        money.removeView(imageView);
-                        updateTotals(new BigDecimal(-10));
+                        bills.removeView(imageView);
+                        updateTotals(new BigDecimal("-10"));
                     }
                 });
                 imageView.setImageResource(R.drawable.ten);
                 imageView.setLayoutParams(new LinearLayout.LayoutParams(380,175));
-                money.addView(imageView);
+                bills.addView(imageView);
                 updateTotals(new BigDecimal("10"));
 
             }
@@ -119,14 +120,14 @@ public class InputAmount extends Activity {
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        money.removeView(imageView);
-                        updateTotals(new BigDecimal(-5));
+                        bills.removeView(imageView);
+                        updateTotals(new BigDecimal("-5"));
                     }
                 });
 
                 imageView.setImageResource(R.drawable.five);
                 imageView.setLayoutParams(new LinearLayout.LayoutParams(380,175));
-                money.addView(imageView);
+                bills.addView(imageView);
                 updateTotals(new BigDecimal("5"));
 
             }
@@ -140,14 +141,94 @@ public class InputAmount extends Activity {
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        money.removeView(imageView);
-                        updateTotals(new BigDecimal(-1));
+                        bills.removeView(imageView);
+                        updateTotals(new BigDecimal("-1"));
                     }
                 });
                 imageView.setImageResource(R.drawable.one);
                 imageView.setLayoutParams(new LinearLayout.LayoutParams(380,175));
-                money.addView(imageView);
+                bills.addView(imageView);
                 updateTotals(new BigDecimal("1"));
+
+            }
+        });
+
+        findViewById(R.id.quarter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ImageView imageView = new ImageView(InputAmount.this);
+
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        change.removeView(imageView);
+                        updateTotals(new BigDecimal("-.25"));
+                    }
+                });
+                imageView.setImageResource(R.drawable.quarter);
+                imageView.setLayoutParams(new LinearLayout.LayoutParams(380,175));
+                change.addView(imageView);
+                updateTotals(new BigDecimal(".25"));
+
+            }
+        });
+
+        findViewById(R.id.dime).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ImageView imageView = new ImageView(InputAmount.this);
+
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        change.removeView(imageView);
+                        updateTotals(new BigDecimal("-.1"));
+                    }
+                });
+                imageView.setImageResource(R.drawable.dime);
+                imageView.setLayoutParams(new LinearLayout.LayoutParams(380,175));
+                change.addView(imageView);
+                updateTotals(new BigDecimal(".1"));
+
+            }
+        });
+
+        findViewById(R.id.nickel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ImageView imageView = new ImageView(InputAmount.this);
+
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        change.removeView(imageView);
+                        updateTotals(new BigDecimal("-.05"));
+                    }
+                });
+                imageView.setImageResource(R.drawable.nickel);
+                imageView.setLayoutParams(new LinearLayout.LayoutParams(380,175));
+                change.addView(imageView);
+                updateTotals(new BigDecimal(".05"));
+
+            }
+        });
+
+        findViewById(R.id.penny).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ImageView imageView = new ImageView(InputAmount.this);
+
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        change.removeView(imageView);
+                        updateTotals(new BigDecimal("-.01"));
+                    }
+                });
+                imageView.setImageResource(R.drawable.penny);
+                imageView.setLayoutParams(new LinearLayout.LayoutParams(380,175));
+                change.addView(imageView);
+                updateTotals(new BigDecimal(".01"));
 
             }
         });
