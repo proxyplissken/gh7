@@ -2,9 +2,10 @@ package com.gh7.currency;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,11 +17,13 @@ public class InputAmount extends Activity {
 
     public BigDecimal price = new BigDecimal("50.12");
     public BigDecimal paid = new BigDecimal("0.00");
-    public BigDecimal remain = new BigDecimal("0.00");
+    public BigDecimal remain = price;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mp = MediaPlayer.create(this, R.raw.bell);
         setContentView(R.layout.activity_input_amount);
 
         ((TextView)findViewById(R.id.price)).setText(price.toString());
@@ -234,27 +237,45 @@ public class InputAmount extends Activity {
 
             }
         });
+
+        updateDisplay();
+        updateThumb();
     }
 
     public void updateTotals(BigDecimal amount){
         paid = paid.add(amount);
         remain = price.subtract(paid);
         updateDisplay();
+        updateThumb();
     }
 
     public void updateDisplay(){
-        ((TextView)findViewById(R.id.price)).setText(price.toString());
-        ((TextView)findViewById(R.id.paid)).setText(paid.toString());
-        ((TextView)findViewById(R.id.remain)).setText(remain.abs().toString());
+        ((TextView)findViewById(R.id.price)).setText("$" + price.toString());
+        ((TextView)findViewById(R.id.paid)).setText("$" +paid.toString());
+        ((TextView)findViewById(R.id.remain)).setText("$" +remain.abs().toString());
 
         if(remain.floatValue() <=0){
             ((TextView)findViewById(R.id.remain)).setTextColor(0xFF006400);
             ((TextView)findViewById(R.id.remaintext)).setTextColor(0xFF006400);
-            ((TextView)findViewById(R.id.remaintext)).setText("in Change");
+            ((TextView)findViewById(R.id.remaintext)).setText("Change");
         } else {
             ((TextView)findViewById(R.id.remain)).setTextColor(Color.RED);
             ((TextView)findViewById(R.id.remaintext)).setTextColor(Color.RED);
             ((TextView)findViewById(R.id.remaintext)).setText("Remaining");
+        }
+    }
+
+    public void updateThumb() {
+        ImageView thumb = findViewById(R.id.thumb);
+        FrameLayout thumbback = findViewById(R.id.thumbback);
+        if (remain.floatValue() <= 0){
+            thumb.setRotation(0f);
+            thumbback.setBackgroundColor(Color.GREEN);
+            mp.start();
+
+        } else {
+            thumb.setRotation(-180f * (remain.floatValue() / price.floatValue()));
+            thumbback.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
         }
     }
 }
