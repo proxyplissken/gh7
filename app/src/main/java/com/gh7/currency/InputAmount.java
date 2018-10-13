@@ -1,6 +1,8 @@
 package com.gh7.currency;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -237,7 +239,22 @@ public class InputAmount extends Activity {
     public void updateTotals(BigDecimal amount){
         paid = paid.add(amount);
         remain = price.subtract(paid);
+        updateDisplay();
+    }
+
+    public void updateDisplay(){
+        ((TextView)findViewById(R.id.price)).setText(price.toString());
         ((TextView)findViewById(R.id.paid)).setText(paid.toString());
-        ((TextView)findViewById(R.id.remain)).setText(remain.toString());
+        ((TextView)findViewById(R.id.remain)).setText(remain.abs().toString());
+
+        if(remain.floatValue() <=0){
+            ((TextView)findViewById(R.id.remain)).setTextColor(0xFF006400);
+            ((TextView)findViewById(R.id.remaintext)).setTextColor(0xFF006400);
+            ((TextView)findViewById(R.id.remaintext)).setText("in Change");
+        } else {
+            ((TextView)findViewById(R.id.remain)).setTextColor(Color.RED);
+            ((TextView)findViewById(R.id.remaintext)).setTextColor(Color.RED);
+            ((TextView)findViewById(R.id.remaintext)).setText("Remaining");
+        }
     }
 }
