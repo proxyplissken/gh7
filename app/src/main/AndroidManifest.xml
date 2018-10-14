@@ -19,6 +19,7 @@
         <activity android:name=".InputAmount" android:screenOrientation="portrait"/>
         <activity android:name=".ItemSelect" android:screenOrientation="portrait"/>
         <activity android:name=".MenuScreen" android:screenOrientation="portrait"/>
+        <activity android:name=".SubMenuScreen" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

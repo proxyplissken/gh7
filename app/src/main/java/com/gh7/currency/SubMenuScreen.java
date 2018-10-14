@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class MenuScreen extends Activity {
+public class SubMenuScreen extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,22 +16,12 @@ public class MenuScreen extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.menu_screen);
+        setContentView(R.layout.sub_menu_screen);
 
-        findViewById(R.id.learn).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.shopping).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getBaseContext(), SubMenuScreen.class);
-                startActivity(i);
-            }
-        });
-
-        findViewById(R.id.findhelp).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "https://ellis-219313.appspot.com/language";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
+                Intent i = new Intent(getBaseContext(), ItemSelect.class);
                 startActivity(i);
             }
         });
