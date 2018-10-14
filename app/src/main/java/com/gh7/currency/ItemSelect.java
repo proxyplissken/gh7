@@ -51,7 +51,7 @@ public class ItemSelect extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), InputAmount.class);
-                intent.putExtra("PRICE", "29.99");
+                intent.putExtra("PRICE", "25.65");
                 intent.putExtra("IMAGE", R.drawable.barstool);
                 startActivity(intent);
             }

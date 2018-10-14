@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:gravity="center"
-                    android:text="$29.99  ($565.57 MXN)"
+                    android:text="$25.65  ($483.72 MXN)"
                     android:textSize="30dp"
 
                     />
