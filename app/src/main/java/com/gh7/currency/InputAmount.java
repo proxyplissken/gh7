@@ -27,6 +27,9 @@ public class InputAmount extends Activity {
         setContentView(R.layout.activity_input_amount);
 
         String priceValue = getIntent().getStringExtra("PRICE");
+        int itemRef = getIntent().getIntExtra("IMAGE", R.drawable.milkone);
+
+        ((ImageView)findViewById(R.id.imageholder)).setImageResource(itemRef);
         remain = price = new BigDecimal(priceValue);
 
         mp = MediaPlayer.create(this, R.raw.bell);
@@ -266,7 +269,7 @@ public class InputAmount extends Activity {
         } else {
             ((TextView)findViewById(R.id.remain)).setTextColor(Color.RED);
             ((TextView)findViewById(R.id.remaintext)).setTextColor(Color.RED);
-            ((TextView)findViewById(R.id.remaintext)).setText("Remaining");
+            ((TextView)findViewById(R.id.remaintext)).setText("Needed");
         }
     }
 

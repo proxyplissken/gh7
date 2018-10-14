@@ -19,6 +19,7 @@ public class ItemSelect extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), InputAmount.class);
                 intent.putExtra("PRICE", "3.75");
+                intent.putExtra("IMAGE", R.drawable.milkone);
                 startActivity(intent);
             }
         });
@@ -27,6 +28,7 @@ public class ItemSelect extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), InputAmount.class);
                 intent.putExtra("PRICE", "86.00");
+                intent.putExtra("IMAGE", R.drawable.bike);
                 startActivity(intent);
             }
         });
@@ -35,6 +37,7 @@ public class ItemSelect extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), InputAmount.class);
                 intent.putExtra("PRICE", "8.45");
+                intent.putExtra("IMAGE", R.drawable.steak);
                 startActivity(intent);
             }
         });
