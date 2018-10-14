@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -24,10 +26,13 @@ public class InputAmount extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_input_amount);
 
         String priceValue = getIntent().getStringExtra("PRICE");
-        int itemRef = getIntent().getIntExtra("IMAGE", R.drawable.milkone);
+        int itemRef = getIntent().getIntExtra("IMAGE", R.drawable.dollar);
 
         ((ImageView)findViewById(R.id.imageholder)).setImageResource(itemRef);
         remain = price = new BigDecimal(priceValue);

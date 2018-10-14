@@ -33,7 +33,7 @@ public class Splash extends Activity {
                     handler.post(new Runnable(){
                         @Override
                         public void run() {
-                            Intent i = new Intent(Splash.this, ItemSelect.class);
+                            Intent i = new Intent(Splash.this, MenuScreen.class);
                             startActivity(i);
                         }});
                 } catch (InterruptedException e) {
