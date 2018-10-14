@@ -105,6 +105,32 @@
                     />
 
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/itemfour"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/itemborder">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/barstool"
+                    android:scaleType="centerCrop"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:text="$29.99  ($565.57 MXN)"
+                    android:textSize="30dp"
+
+                    />
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
     </LinearLayout>
